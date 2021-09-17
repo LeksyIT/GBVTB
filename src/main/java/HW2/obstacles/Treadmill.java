@@ -4,7 +4,7 @@ import HW2.Obstacles;
 import HW2.Participant;
 
 public class Treadmill extends Obstacles {
-    private int LENGTH;
+    private final int LENGTH;
 
     public Treadmill(int COMPLEXITY) {
         super(COMPLEXITY);

@@ -4,7 +4,7 @@ import HW2.Obstacles;
 import HW2.Participant;
 
 public class Wall extends Obstacles {
-    private int HEIGHT;
+    private final int HEIGHT;
 
     public Wall(int COMPLEXITY) {
         super(COMPLEXITY);
