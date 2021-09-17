@@ -1,32 +1,27 @@
 package HW2;
 
 public abstract class Obstacles {
-    private String OBSTACLES_NAME = "obstacle";
-    private String ACTION = "action";
-    private int COMPLEXITY;
+    private String obstaclesName = "obstacle";
+    private String action = "action";
 
-    public void setOBSTACLES_NAME(String OBSTACLES_NAME) {
-        this.OBSTACLES_NAME = OBSTACLES_NAME;
+    public void setOBSTACLES_NAME(String obstaclesName) {
+        this.obstaclesName = obstaclesName;
     }
 
-    public void setACTION(String ACTION) {
-        this.ACTION = ACTION;
-    }
-
-    public Obstacles(int value) {
-        this.COMPLEXITY = value;
+    public void setACTION(String action) {
+        this.action = action;
     }
 
     public abstract boolean action(Participant part);
 
     public boolean check(Participant part) {
         if (action(part)) {
-            System.out.println(part.getNAME() + " can " + ACTION + " this " + OBSTACLES_NAME);
+            System.out.println(part.getNAME() + " can " + action + " this " + obstaclesName);
             return true;
         } else {
-            System.out.println(part.getNAME() + " can't " + ACTION + " this " + OBSTACLES_NAME);
+            System.out.println(part.getNAME() + " can't " + action + " this " + obstaclesName);
             return false;
         }
 
-    };
+    }
 }

@@ -4,27 +4,27 @@ import HW2.actions.Jumping;
 import HW2.actions.Running;
 
 public abstract class Participant implements Running, Jumping {
-    private int MAXIMUM_JUMP_HEIGHT;
-    private int MAXIMUM_RUN_LENGTH;
-    private String NAME;
+    private int maximumJumpHeight;
+    private int maximumRunLength;
+    private String name;
 
-    public Participant(int maximum_jump_height, int maximum_run_length, String name) {
+    public Participant(int maximumJumpHeight, int maximumRunLength, String name) {
 
-        MAXIMUM_JUMP_HEIGHT = maximum_jump_height;
-        MAXIMUM_RUN_LENGTH = maximum_run_length;
-        NAME = name;
+        this.maximumJumpHeight = maximumJumpHeight;
+        this.maximumRunLength = maximumRunLength;
+        this.name = name;
     }
 
 
     public int getMAXIMUM_JUMP_HEIGHT() {
-        return MAXIMUM_JUMP_HEIGHT;
+        return maximumJumpHeight;
     }
 
     public int getMAXIMUM_RUN_LENGTH() {
-        return MAXIMUM_RUN_LENGTH;
+        return maximumRunLength;
     }
 
     public String getNAME() {
-        return NAME;
+        return name;
     }
 }
