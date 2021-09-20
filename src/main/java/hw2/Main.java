@@ -1,10 +1,10 @@
-package HW2;
+package hw2;
 
-import HW2.obstacles.Treadmill;
-import HW2.obstacles.Wall;
-import HW2.participants.Cat;
-import HW2.participants.People;
-import HW2.participants.Robot;
+import hw2.obstacles.Treadmill;
+import hw2.obstacles.Wall;
+import hw2.participants.Cat;
+import hw2.participants.People;
+import hw2.participants.Robot;
 
 public class Main {
     public static void main(String[] args) {

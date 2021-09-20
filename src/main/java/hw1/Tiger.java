@@ -1,4 +1,4 @@
-package HW1;
+package hw1;
 
 public class Tiger extends Cat{
     public Tiger(String name, int limitlengtswim, int limitlengtrun) {

@@ -1,8 +1,8 @@
-package HW2.participants;
+package hw2.participants;
 
-import HW2.Participant;
-import HW2.actions.Jumping;
-import HW2.actions.Running;
+import hw2.Participant;
+import hw2.actions.Jumping;
+import hw2.actions.Running;
 
 public class Robot extends Participant implements Jumping, Running {
     public Robot(int maximum_jump_height, int maximum_run_length, String name) {

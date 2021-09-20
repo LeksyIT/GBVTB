@@ -1,7 +1,7 @@
-package HW2;
+package hw2;
 
-import HW2.actions.Jumping;
-import HW2.actions.Running;
+import hw2.actions.Jumping;
+import hw2.actions.Running;
 
 public abstract class Participant implements Running, Jumping {
     private int maximumJumpHeight;

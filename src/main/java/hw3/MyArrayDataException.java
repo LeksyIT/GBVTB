@@ -1,4 +1,4 @@
-package HW3;
+package hw3;
 
 public class MyArrayDataException extends Exception {
     public MyArrayDataException(String message) {

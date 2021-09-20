@@ -1,4 +1,4 @@
-package HW2;
+package hw2;
 
 public abstract class Obstacles {
     private String obstaclesName = "obstacle";

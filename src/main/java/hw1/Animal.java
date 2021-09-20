@@ -1,4 +1,4 @@
-package HW1;
+package hw1;
 
 public abstract class Animal {
     final String NAME;

@@ -1,4 +1,4 @@
-package HW1;
+package hw1;
 
 public class HomeCat extends Cat{
     public HomeCat(String name, int limitlengtswim, int limitlengtrun) {

@@ -1,7 +1,7 @@
-package HW2.obstacles;
+package hw2.obstacles;
 
-import HW2.Obstacles;
-import HW2.Participant;
+import hw2.Obstacles;
+import hw2.Participant;
 
 public class Treadmill extends Obstacles {
     private final int length;

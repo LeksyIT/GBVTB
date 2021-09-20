@@ -1,6 +1,6 @@
-package HW2.actions;
+package hw2.actions;
 
-import HW2.Action;
+import hw2.Action;
 
 public interface Running extends Action {
     boolean running(int length);
