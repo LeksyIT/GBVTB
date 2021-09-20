@@ -12,18 +12,19 @@ public class Main {
         }
     }
 
-    public static boolean checkArr(String[][] arr) throws MyArraySizeException {
-        if (arr.length == 4 && countArr(arr)) {
-            return true;
-        } else {
+    public static void checkArr(String[][] arr) throws MyArraySizeException {
+        if (!countArr(arr)) {
             throw new MyArraySizeException("This arr is`t String[4][4]");
         }
     }
 
     public static boolean countArr(String[][] arr) {
-        for (String[] x : arr) {
-            for (String y : x) {
-                if(y.length() != 4){
+        if(arr.length != 4){
+            return false;
+        }
+        for (String[] i : arr) {
+            for (String ignored : i) {
+                if (i.length != 4) {
                     return false;
                 }
             }
@@ -32,18 +33,18 @@ public class Main {
     }
 
     public static void toIntArr(String[][] arr) throws MyArraySizeException, MyArrayDataException {
-        if (!checkArr(arr)) {
-            int sum = 0;
-            for (int x = 0; x < arr.length; x++) {
-                for (int y = 0; y < arr.length; y++) {
-                    try {
-                        sum += Integer.parseInt(arr[x][y]);
-                    } catch (NumberFormatException exception) {
-                        throw new MyArrayDataException("String[" + x + "][" + y + "] cannot be converted to int ");
-                    }
+        checkArr(arr);
+        int sum = 0;
+        for (int x = 0; x < arr.length; x++) {
+            for (int y = 0; y < arr.length; y++) {
+                try {
+                    sum += Integer.parseInt(arr[x][y]);
+                } catch (NumberFormatException exception) {
+                    throw new MyArrayDataException("String[" + x + "][" + y + "] cannot be converted to int ");
                 }
             }
-            System.out.println("Sum = " + sum);
         }
+        System.out.println("Sum = " + sum);
+
     }
 }
