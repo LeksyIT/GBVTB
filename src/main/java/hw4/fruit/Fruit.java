@@ -4,7 +4,7 @@ public class Fruit {
     private static Float weight;
 
     public void setWeight(Float weight) {
-        this.weight = weight;
+        Fruit.weight = weight;
     }
 
     public static Float getWeight(){
