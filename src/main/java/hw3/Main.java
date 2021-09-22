@@ -5,9 +5,7 @@ public class Main {
         String[][] arr = {{"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}};
         try {
             toIntArr(arr);
-        } catch (MyArraySizeException ex) {
-            System.out.println(ex.getMessage());
-        } catch (MyArrayDataException ex) {
+        } catch (MyArraySizeException | MyArrayDataException ex) {
             System.out.println(ex.getMessage());
         }
     }
