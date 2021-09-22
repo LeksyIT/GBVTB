@@ -24,7 +24,6 @@ public class Main {
         testArr.add("9");
         findUnique(testArr);
 
-
     }
 
     public static Map<String, Integer> countElements(List<String> arr) {
