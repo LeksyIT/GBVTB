@@ -1,10 +1,5 @@
 package hw9.tableCreater;
 
-import hw9.TestTable;
-
-import java.io.File;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,6 +13,7 @@ public class WorkWithTable {
     private static Connection connection = DBConfig.getConnection();
     private static ArrayList<Field> fieldArray = new ArrayList<>();
     private static String tableName;
+    private static Boolean checker = true;
 
     static {
         classToString.put(int.class, "INTEGER");
@@ -29,11 +25,11 @@ public class WorkWithTable {
     }
 
     public static void createTable(Object obj) {
-        getAnnotations(obj);
+        if (Boolean.TRUE.equals(checker)) getAnnotations(obj);
         try {
             Statement createStatement = connection.createStatement();
             StringBuilder sqlRequest = new StringBuilder();
-            sqlRequest.append("CREATE TABLE " + tableName + " (");
+            sqlRequest.append("CREATE TABLE IF NOT EXISTS ").append(tableName).append(" (");
 
             for (Field field : fieldArray) {
                 sqlRequest.append(field.getName())
@@ -64,17 +60,16 @@ public class WorkWithTable {
         Field[] array = Arrays.stream(fields)
                 .filter(field -> field.isAnnotationPresent(Column.class))
                 .toArray(Field[]::new);
-        for (Field field : array) {
-            fieldArray.add(field);
-        }
+        fieldArray.addAll(Arrays.asList(array));
+        checker = false;
     }
 
     public static void appendToTable(Object obj) {
-        getAnnotations(obj);
+        if (Boolean.TRUE.equals(checker)) getAnnotations(obj);
         try {
             Statement createStatement = connection.createStatement();
             StringBuilder sqlRequest = new StringBuilder();
-            sqlRequest.append("INSERT INTO " + tableName + "(");
+            sqlRequest.append("INSERT INTO ").append(tableName).append("(");
 
             for (Field field : fieldArray) {
                 field.setAccessible(true);
